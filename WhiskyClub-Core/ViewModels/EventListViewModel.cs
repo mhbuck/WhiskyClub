@@ -31,7 +31,7 @@ namespace WhiskyClub.Core.ViewModels
 
         public EventListViewModel(IScreen screen = null)
         {
-            HostScreen = screen ?? Locator.Current.GetService<IScreen>();
+            //HostScreen = screen ?? Locator.Current.GetService<IScreen>();
             Events = new ReactiveList<Event>();
 
             var api = (IEventApi)new MockEvent();

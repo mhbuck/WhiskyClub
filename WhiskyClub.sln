@@ -17,6 +17,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{FD95BA8F-5049-
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhiskyClub-Core", "WhiskyClub-Core\WhiskyClub-Core.csproj", "{01573214-1C88-464E-9854-885C0DD63E86}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhiskyClub.Core.Tests", "WhiskyClub.Core.Tests\WhiskyClub.Core.Tests.csproj", "{4909A2B5-EF75-4995-9B89-0B98E9E80A31}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{01573214-1C88-464E-9854-885C0DD63E86}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{01573214-1C88-464E-9854-885C0DD63E86}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{01573214-1C88-464E-9854-885C0DD63E86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4909A2B5-EF75-4995-9B89-0B98E9E80A31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4909A2B5-EF75-4995-9B89-0B98E9E80A31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4909A2B5-EF75-4995-9B89-0B98E9E80A31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4909A2B5-EF75-4995-9B89-0B98E9E80A31}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,5 +61,6 @@ Global
 		{B703D870-E8F7-4317-94D2-D824ED945947} = {DB1B58D7-F5AA-4670-A34F-94770E96FB90}
 		{D6ABD83C-2719-442A-9E23-E6293DD3C6AD} = {DB1B58D7-F5AA-4670-A34F-94770E96FB90}
 		{01573214-1C88-464E-9854-885C0DD63E86} = {FD95BA8F-5049-4004-95BE-406AC6B018F1}
+		{4909A2B5-EF75-4995-9B89-0B98E9E80A31} = {FD95BA8F-5049-4004-95BE-406AC6B018F1}
 	EndGlobalSection
 EndGlobal
