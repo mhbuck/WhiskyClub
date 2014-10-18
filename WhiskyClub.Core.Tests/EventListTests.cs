@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WhiskyClub.Core.Models;
 using WhiskyClub.Core.ViewModels;
 using Xunit;
 
@@ -14,7 +15,13 @@ namespace WhiskyClub.Core.Tests
         public void EventsLoad()
         {
             var fixture = new EventListViewModel();
-            var test = fixture.Events.Count;
+            var events = new List<Event>();
+
+            fixture.LoadEvents.ExecuteAsync().Subscribe(x => events = x);
+
+            var count = fixture.Events.Count;
+
+            Assert.Equal(3, count);
         }
     }
 }

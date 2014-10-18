@@ -86,8 +86,20 @@
     <Compile Include="..\WhiskyClub-Core\Models\Event.cs">
       <Link>Models\Event.cs</Link>
     </Compile>
+    <Compile Include="..\WhiskyClub-Core\Models\Member.cs">
+      <Link>Models\Member.cs</Link>
+    </Compile>
+    <Compile Include="..\WhiskyClub-Core\Models\Note.cs">
+      <Link>Models\Note.cs</Link>
+    </Compile>
+    <Compile Include="..\WhiskyClub-Core\Models\Whisky.cs">
+      <Link>Models\Whisky.cs</Link>
+    </Compile>
     <Compile Include="..\WhiskyClub-Core\ViewModels\EventListViewModel.cs">
       <Link>ViewModels\EventListViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\WhiskyClub-Core\ViewModels\EventViewModel.cs">
+      <Link>ViewModels\EventViewModel.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

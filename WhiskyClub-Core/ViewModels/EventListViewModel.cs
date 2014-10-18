@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
+using Akavache;
 using ReactiveUI;
 using Splat;
 using WhiskyClub.Core.Models;
@@ -17,7 +18,7 @@ namespace WhiskyClub.Core.ViewModels
         [IgnoreDataMember]
         public string UrlPathSegment
         {
-            get { return "Login"; }
+            get { return "Event Listing"; }
         }
 
         [IgnoreDataMember]
@@ -34,10 +35,11 @@ namespace WhiskyClub.Core.ViewModels
             //HostScreen = screen ?? Locator.Current.GetService<IScreen>();
             Events = new ReactiveList<Event>();
 
-            var api = (IEventApi)new MockEvent();
 
             // Command to fetch
             LoadEvents = ReactiveCommand.CreateAsyncTask(async _ => {
+                var api = (IEventApi)new MockApi();
+
                 var results = await api.GetWhiskyEvents();
                 return results;
             });
@@ -47,7 +49,24 @@ namespace WhiskyClub.Core.ViewModels
                 Events.Clear();
                 Events.AddRange(i);
             });
+        }
+    }
 
+    [DataContract]
+    public class EventTileViewModel : ReactiveObject
+    { 
+        [DataMember]
+        public Event Model { get; protected set; }
+
+        public ReactiveCommand<Object> ViewThisEvent { get; protected set; }
+
+        public EventTileViewModel(Event model, IScreen hostScreen = null)
+        {
+            hostScreen = hostScreen ?? Locator.Current.GetService<IScreen>();
+
+            this.Model = model;
+            this.ViewThisEvent = ReactiveCommand.CreateAsyncObservable(_ =>
+                hostScreen.Router.Navigate.ExecuteAsync(new EventViewModel(model, hostScreen)));
         }
     }
 }
